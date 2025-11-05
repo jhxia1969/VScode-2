@@ -41,7 +41,7 @@
     <h1>直方图示例 - Histogram Example</h1>
     <div class="chart-container">
         <div class="chart-title">数据分布直方图 - Data Distribution Histogram</div>
-        <canvas id="histogramChart" width="800" height="450"></canvas>
+        <canvas id="histogramChart" width="800" height="450" role="img" aria-label="Data distribution histogram showing frequency values across 10 ranges from 0-10 to 90-100"></canvas>
     </div>
 
     <script>
@@ -58,7 +58,7 @@
         const chartWidth = canvas.width - 2 * padding;
         const chartHeight = canvas.height - 2 * padding;
         const barWidth = chartWidth / data.length;
-        const maxValue = Math.max(...data);
+        const maxValue = data.reduce((max, val) => Math.max(max, val), 0);
 
         // 绘制坐标轴 - Draw axes
         ctx.strokeStyle = '#333';
