@@ -12,7 +12,9 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     calc_parser = subparsers.add_parser("calc", help="Run basic arithmetic")
-    calc_parser.add_argument("--op", choices=["add", "sub", "mul", "div"], required=True)
+    calc_parser.add_argument(
+        "--op", choices=["add", "sub", "mul", "div"], required=True
+    )
     calc_parser.add_argument("--a", type=float, required=True)
     calc_parser.add_argument("--b", type=float, required=True)
 
