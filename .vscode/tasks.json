@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Unit Tests",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Calc Demo",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": [
+        "src/main.py",
+        "calc",
+        "--op",
+        "add",
+        "--a",
+        "10",
+        "--b",
+        "5"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Batch Rename Dry Run",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": [
+        "src/main.py",
+        "batch-rename",
+        "--dir",
+        "${workspaceFolder}\\src",
+        "--prefix",
+        "demo",
+        "--start",
+        "1",
+        "--ext",
+        ".py",
+        "--dry-run"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
